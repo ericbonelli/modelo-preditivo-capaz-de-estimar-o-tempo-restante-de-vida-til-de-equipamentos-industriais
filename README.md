@@ -1,0 +1,1 @@
+# modelo-preditivo-capaz-de-estimar-o-tempo-restante-de-vida-til-de-equipamentos-industriais
