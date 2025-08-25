@@ -1,0 +1,18 @@
+services:
+  rul-api:
+    image: rul-api:v1
+    container_name: rul-api
+    ports: ["8000:8000"]
+    environment:
+      - MODEL_DIR=/srv/app/models/fd001_lstm_v1
+      - CALIB_MODE=piecewise
+      - CALIB_T=140
+      - CALIB_B_LOW=-3.6
+      - CALIB_B_HIGH=-15.0
+      - CALIB_A=1.0
+      - CALIB_B=0.0
+      - RUL_MIN=0
+      - RUL_MAX=150
+    volumes:
+      - ./models:/srv/app/models:ro
+    restart: unless-stopped
